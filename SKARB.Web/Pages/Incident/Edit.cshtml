@@ -1,0 +1,45 @@
+﻿@page
+@model SKARB.Web.Pages.Incident.EditModel
+
+@{
+    ViewData["Title"] = "Редактирование происшествия";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Incident.IncidentId" />
+            <div class="form-group">
+                <label asp-for="Incident.RegNumber" class="control-label"></label>
+                <input asp-for="Incident.RegNumber" class="form-control" />
+                <span asp-validation-for="Incident.RegNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Incident.IncidentDate" class="control-label"></label>
+                <input asp-for="Incident.IncidentDate" class="form-control" />
+                <span asp-validation-for="Incident.IncidentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Incident.Description" class="control-label"></label>
+                <input asp-for="Incident.Description" class="form-control" />
+                <span asp-validation-for="Incident.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Incident.DecisionId" class="control-label"></label>
+                <select asp-for="Incident.DecisionId" class="form-control" asp-items="ViewBag.DecisionId"></select>
+                <span asp-validation-for="Incident.DecisionId" class="text-danger"></span>
+            </div>
+            <div class="form-group save-section">
+                <input type="submit" value="Сохранить" class="btn func-button add-user-button mobile-button" />
+                <a class="btn func-button func-alt-button add-user-button mobile-button" asp-page="./Index">Обратно к списку</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

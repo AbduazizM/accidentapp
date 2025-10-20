@@ -1,0 +1,200 @@
+﻿.menu-title {
+    margin-bottom: 0.5em;
+    display: flex;
+    flex-direction: row;
+    gap: 0.4em;
+
+}
+.button-container {
+    display: flex;
+    gap: 0.3em;
+    justify-content: right;
+}
+
+code {
+    color: black;
+}
+
+.bordered-button {
+    border: 1px solid #111827;
+    color: #111827;
+    transition-duration: .2s;
+}
+
+    .bordered-button:hover {
+        background: #111827;
+        color: white;
+        border: 1px solid #111827;
+    }
+
+.info-container {
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.date-container {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.form-select {
+    width: 10em;
+}
+
+.foot-table-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.table thead th {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.8em;
+    border: none;
+    padding: 1rem 0.75rem;
+    text-align: center;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+
+.table-wrapper {
+    border-radius: 0.75rem;
+}
+
+
+.stat-info-container {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    gap: 1em;
+    align-items: end;
+    padding-bottom: 0.4em;
+    order: -1;
+}
+
+    .stat-info-container p {
+        margin: 0;
+    }
+
+.main-table-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5em 0.5em 0.5em 0em;
+}
+
+.controller-base {
+    height: 3em;
+}
+
+.search-controller {
+    width: 15em;
+}
+
+.paggination-container {
+    display: flex;
+    gap: 0.3em;
+}
+
+.search-container {
+    display: flex;
+    gap: 0.3em;
+}
+
+.date-with-lbl {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.date-button-container {
+    display: flex;
+    gap: 0.3em;
+}
+
+@media (max-width: 1400px) {
+    h3 {
+        text-align: center;
+    }
+
+    .controller-base {
+        height: auto;
+        width: 100%;
+        margin: 0;
+    }
+
+        .controller-base button, .controller-base a, .date-container button {
+            height: 3em;
+        }
+
+    .main-table-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        margin: 0em;
+    }
+
+    .menu-title {
+        flex-direction: column;
+        order: 1;
+    }
+
+    .foot-table-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stat-info-container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .paggination-container {
+        order: 1;
+    }
+
+    .info-container {
+        flex-direction: column;
+        gap: 0.4em;
+    }
+
+        .info-container select {
+            margin: 0;
+        }
+
+    .date-container {
+        flex-direction: column;
+    }
+
+    .date-with-lbl {
+        width: stretch;
+        gap: 1em;
+    }
+
+        .date-with-lbl label {
+            width: 1em;
+        }
+
+    .date-button-container {
+        width: stretch;
+        flex-direction: row;
+    }
+
+    .stat-info-container {
+        order: -1;
+    }
+}

@@ -1,0 +1,126 @@
+html {
+    font-size: 14px;
+}
+
+.save-section {
+    margin-top: 1em;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+.func-button {
+    background-color: #111827;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    transition-duration: .2s;
+    touch-action: manipulation;
+    min-width: 10em;
+    align-content: center;
+}
+
+    .func-button:hover {
+        background-color: #374151;
+        color: #FFFFFF;
+    }
+
+    .func-button:focus {
+        box-shadow: none;
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+
+    .func-button:disabled {
+        cursor: not-allowed;
+    }
+
+.func-alt-button {
+    background-color: #6B7280;
+}
+
+    .func-alt-button:hover {
+        background-color: #374151;
+    }
+
+.bordered-button {
+    border: 1px solid #111827;
+    border-radius: 8px;
+    color: #111827;
+    transition-duration: .2s;
+}
+
+    .bordered-button:hover {
+        background: #374151;
+        color: white;
+        border: 1px solid #111827;
+    }
+
+.datepicker {
+    border: 1px solid #111827;
+    border-radius: 8px;
+    padding: 0.5em;
+}
+
+
+.button-container a, .button-container button {
+    width: 10em;
+    align-content: center;
+}
+
+
+@media (max-width: 768px) {
+    .save-section {
+        margin-top: 0em;
+    }
+
+    h3, h2, h4 {
+        text-align: center;
+    }
+    .mobile-button {
+        width: 100%;
+        height: 3em;
+        align-content: center;
+    }
+    .add-user-button {
+        width: stretch;
+        margin-top: 0.5em;
+    }
+
+    .table-button {
+        width: stretch;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3em;
+    }
+
+        .button-container a, .button-container button {
+            width: stretch;
+            height: 3em;
+        }
+}

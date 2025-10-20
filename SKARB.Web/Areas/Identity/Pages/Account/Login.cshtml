@@ -1,0 +1,100 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Аутентификация";
+    Layout = "_LoginLayout";
+}
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 400px;
+        padding: 2rem;
+        background: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+    }
+
+    .func-button {
+        background-color: #111827;
+        border: 1px solid transparent;
+        border-radius: 7px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none #6B7280 solid;
+        transition-duration: .2s;
+        touch-action: manipulation;
+        width: stretch;
+    }
+
+        .func-button:hover {
+            background-color: #374151;
+            color: white;
+        }
+
+        .func-button:focus {
+            box-shadow: none;
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+</style>
+
+
+<div class="login-container">
+    <div class="login-card">
+        <h3 class="text-center mb-4">Вход в систему</h3>
+        <section>
+            <form id="account" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" placeholder="логин" />
+                    <label asp-for="Input.UserName" class="form-label">Логин</label>
+                    <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="пароль" />
+                    <label asp-for="Input.Password" class="form-label">Пароль</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="checkbox mb-3 text-start">
+                    <label asp-for="Input.RememberMe" class="form-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                    </label>
+                </div>
+                <div>
+                    <button id="login-submit" type="submit" class="func-button btn">Войти</button>
+                </div>
+                @* <div class="mt-3">
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Забыли пароль?</a>
+                    </p>
+                </div> *@
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

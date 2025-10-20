@@ -1,0 +1,45 @@
+﻿@page
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+@model SKARB.Web.Pages.Roles.IndexModel
+
+@{
+	ViewData["Title"] = "База ролей";
+}
+
+<link rel="stylesheet" href="~/css/grid-page.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+<h2>@ViewData["Title"]</h2>
+<div class="table-responsive table-wrapper">
+	<table class="table table-striped table-hover align-middle">
+		<thead class="table-dark">
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.IncidentRole[0].IncidentRoleName)
+				</th>
+				<th class="text-end">Действия</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model.IncidentRole)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.IncidentRoleName)
+					</td>
+
+					<td class="button-container align-items-end">
+						@if ((await AuthorizationService.AuthorizeAsync(User, "CanEditOrDelete")).Succeeded)
+						{
+							<a asp-page="./Edit" class="btn btn-sm bordered-button" asp-route-id="@item.IncidentRoleId">Редактировать</a>
+							<a asp-page="./Delete" class="btn btn-sm bordered-button" asp-route-id="@item.IncidentRoleId">Удалить</a>
+						}
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+
+<a asp-page="Create" class="btn func-button mobile-button">Добавить роль</a>

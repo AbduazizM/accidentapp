@@ -1,0 +1,39 @@
+﻿@page
+@model SKARB.Web.Pages.Incident.DetailsModel
+
+@{
+    ViewData["Title"] = "Подробная информация о происшествии";
+}
+
+<link rel="stylesheet" href="~/css/detail.css" asp-append-version="true" />
+
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Incident.IncidentDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Incident.IncidentDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Incident.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Incident.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Incident.Decision)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Incident.Decision.DecisionName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn func-button add-user-button mobile-button" asp-page="./Edit" asp-route-id="@Model.Incident.IncidentId">Редактировать</a>
+    <a class="btn func-button func-alt-button add-user-button mobile-button" asp-page="./Index">Обратно к списку</a>
+</div>

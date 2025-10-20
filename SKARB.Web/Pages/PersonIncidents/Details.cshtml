@@ -1,0 +1,37 @@
+﻿@page
+@model SKARB.Web.Pages.PersonIncidents.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PersonIncident</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonIncident.Incident)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PersonIncident.Incident.IncidentId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonIncident.IncidentRole)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PersonIncident.IncidentRole.IncidentRoleId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonIncident.Person)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PersonIncident.Person.PersonId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn func-button add-user-button mobile-button" asp-page="./Edit" asp-route-id="@Model.PersonIncident.Id">Редактировать</a>
+    <a class="btn func-button func-alt-button add-user-button mobile-button" asp-page="./Index">Обратно к списку</a>
+</div>

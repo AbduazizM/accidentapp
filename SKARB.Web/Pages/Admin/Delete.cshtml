@@ -1,0 +1,24 @@
+﻿@page
+@model SKARB.Web.Pages.Admin.DeleteModel
+@{
+	ViewData["Title"] = "Удалить пользователя";
+}
+
+<link rel="stylesheet" href="~/css/admin-style.css" asp-append-version="true" />
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Вы уверены, что хотите удалить пользователя "@Model.Input.UserName"?</h4>
+
+<div>
+	<form method="post">
+		<input asp-for="Input.Id" type="hidden" />
+		<input asp-for="Input.UserName" type="hidden" />
+
+		<div class="button-container">
+			<button type="submit" class="btn btn-danger">Удалить</button>
+			<a asp-page="./Index" class="btn btn-secondary">Отмена</a>
+		</div>
+	</form>
+</div>
+

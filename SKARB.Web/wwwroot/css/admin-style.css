@@ -1,0 +1,37 @@
+﻿.button-container {
+    display: flex;
+    gap: 0.3em;
+    justify-content: right;
+   
+}
+
+.button-container a, .button-container button {
+    width: 10em;
+    align-content: center;
+}
+
+@media (max-width: 768px) {
+    h3, h2, h4 {
+        text-align: center;
+    }
+
+    .add-user-button {
+        width: stretch;
+        margin-top: 0.5em;
+    }
+
+    .table-button {
+        width: stretch;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3em;
+    }
+
+        .button-container a, .button-container button {
+            width: stretch;
+            height: 3em;
+        }
+}

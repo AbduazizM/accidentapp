@@ -1,0 +1,51 @@
+﻿@page
+@model SKARB.Web.Pages.Person.CreateModel
+
+@{
+	ViewData["Title"] = "Добавление персоны";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="Person.LastName" class="control-label"></label>
+				<input asp-for="Person.LastName" class="form-control" />
+				<span asp-validation-for="Person.LastName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Person.FirstName" class="control-label"></label>
+				<input asp-for="Person.FirstName" class="form-control" />
+				<span asp-validation-for="Person.FirstName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Person.MiddleName" class="control-label"></label>
+				<input asp-for="Person.MiddleName" class="form-control" />
+				<span asp-validation-for="Person.MiddleName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Person.Address" class="control-label"></label>
+				<input asp-for="Person.Address" class="form-control" />
+				<span asp-validation-for="Person.Address" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Person.Convictoins" class="control-label"></label>
+				<input asp-for="Person.Convictoins" class="form-control" />
+				<span asp-validation-for="Person.Convictoins" class="text-danger"></span>
+			</div>
+			<div class="form-group save-section">
+				<input type="submit" value="Сохранить" class="btn func-button add-user-button mobile-button" />
+				<a class="btn func-button func-alt-button add-user-button mobile-button" asp-page="./Index">Обратно к списку</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

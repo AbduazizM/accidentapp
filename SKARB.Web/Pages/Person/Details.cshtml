@@ -1,0 +1,51 @@
+﻿@page
+@model SKARB.Web.Pages.Person.DetailsModel
+
+@{
+    ViewData["Title"] = "Подробная информация о персоне";
+}
+
+<link rel="stylesheet" href="~/css/detail.css" asp-append-version="true" />
+
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Person.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Person.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Person.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Person.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Person.MiddleName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Person.MiddleName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Person.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Person.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Person.Convictoins)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Person.Convictoins)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn func-button add-user-button mobile-button" asp-page="./Edit" asp-route-id="@Model.Person.PersonId">Редактировать</a>
+    <a class="btn func-button func-alt-button add-user-button mobile-button" asp-page="./Index">Обратно к списку</a>
+</div>
