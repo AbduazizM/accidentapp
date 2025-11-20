@@ -1,6 +1,11 @@
 <wpf:ResourceDictionary xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!-- Non-nullable member is uninitialized → ERROR -->
+    <x:Boolean x:Key="/Default/CodeInspection/CodeInspectionSeverity/NonNullableMemberIsUninitialized/@EntryValue">
+        ERROR
+    </x:Boolean>
+
     <!-- Неиспользуемый приватный метод → ERROR -->
     <x:Boolean x:Key="/Default/CodeInspection/CodeInspectionSeverity/UnusedMember/@EntryValue">
         ERROR
@@ -37,3 +42,4 @@
     </x:Boolean>
 
 </wpf:ResourceDictionary>
+
