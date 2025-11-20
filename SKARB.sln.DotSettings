@@ -1,0 +1,39 @@
+<wpf:ResourceDictionary xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Неиспользуемый приватный метод → ERROR -->
+    <x:Boolean x:Key="/Default/CodeInspection/CodeInspectionSeverity/UnusedMember/@EntryValue">
+        ERROR
+    </x:Boolean>
+
+    <!-- Неиспользуемая переменная → ERROR -->
+    <x:Boolean x:Key="/Default/CodeInspection/CodeInspectionSeverity/UnusedLocalVariable/@EntryValue">
+        ERROR
+    </x:Boolean>
+
+    <!-- Возможная NullReferenceException → ERROR -->
+    <x:Boolean x:Key="/Default/CodeInspection/CodeInspectionSeverity/PossibleNullReferenceException/@EntryValue">
+        ERROR
+    </x:Boolean>
+
+    <!-- Конкатенация строк вместо интерполяции → WARNING (понижение) -->
+    <x:Boolean x:Key="/Default/CodeInspection/CodeInspectionSeverity/StringConcatenationInLoops/@EntryValue">
+        WARNING
+    </x:Boolean>
+
+    <!-- Неиспользуемый параметр метода → ERROR -->
+    <x:Boolean x:Key="/Default/CodeInspection/CodeInspectionSeverity/UnusedParameter/@EntryValue">
+        ERROR
+    </x:Boolean>
+
+    <!-- Пустой catch блок → ERROR -->
+    <x:Boolean x:Key="/Default/CodeInspection/CodeInspectionSeverity/EmptyGeneralCatchClause/@EntryValue">
+        ERROR
+    </x:Boolean>
+
+    <!-- Цикл можно заменить LINQ → SUGGESTION -->
+    <x:Boolean x:Key="/Default/CodeInspection/CodeInspectionSeverity/LoopCanBeConvertedToLinqExpression/@EntryValue">
+        SUGGESTION
+    </x:Boolean>
+
+</wpf:ResourceDictionary>
