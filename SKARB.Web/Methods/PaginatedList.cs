@@ -15,7 +15,7 @@ public class PaginatedList<T> : List<T>
         this.AddRange(items);
     }
 
-    public bool HasPreviousPage => PageIndex > 1;
+    public bool HasPreviousPage => PageIndex >= 1;
 
     public bool HasNextPage => PageIndex < TotalPages;
 
