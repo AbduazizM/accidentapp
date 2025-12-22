@@ -15,7 +15,7 @@ public partial class Person
 
     public string? Address { get; set; }
 
-    public int? Convictoins { get; set; } = -1
+    public int? Convictoins { get; set; } = -1;
 
     public string? RegNumber { get; set; }
 
