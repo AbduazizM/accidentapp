@@ -1,0 +1,53 @@
+<group name="windows,authentication">
+
+  <!-- 1. Множественные неуспешные попытки входа -->
+  <rule id="100500" level="10">
+    <if_sid>60128</if_sid> <!-- SID базового события: Windows Failed Logon (4625) -->
+    <event_id>4625</event_id>
+    <title>Windows: Failed login attempt</title>
+    <description>Unsuccessful logon attempt detected</description>
+  </rule>
+
+  <rule id="100501" level="12">
+    <if_matched_sid>100500</if_matched_sid>
+    <frequency>5</frequency>
+    <timeframe>120</timeframe>
+    <title>Bruteforce: Multiple failed login attempts</title>
+    <description>Five failed logons detected on the same host within 2 minutes</description>
+    <group>bruteforce,authentication</group>
+  </rule>
+
+  <!-- 2. Успешный вход после серии неуспешных -->
+  <rule id="100502" level="13">
+    <if_sid>60126</if_sid> <!-- Windows event 4624: Successful login -->
+    <event_id>4624</event_id>
+    <if_matched_sid>100500</if_matched_sid>
+    <timeframe>180</timeframe>
+    <title>Suspicious: Successful login after multiple failed logins</title>
+    <description>Successful login following multiple failed attempts</description>
+    <group>bruteforce,authentication,suspicious</group>
+  </rule>
+
+</group>
+
+<group name="windows,audit">
+
+  <!-- 3. Удаление журналов аудита -->
+  <rule id="100600" level="15">
+    <if_sid>31101,31102,31103</if_sid>
+    <event_id>1102</event_id> <!-- Audit log cleared -->
+    <title>Windows audit log was cleared</title>
+    <description>The security audit log was cleared. Potential malicious activity.</description>
+    <group>audit_cleared,integrity</group>
+  </rule>
+
+  <rule id="100601" level="12">
+    <if_sid>31101,31102,31103</if_sid>
+    <event_id>104</event_id>
+    <field name="win.eventdata.channel">Security|Application|System</field>
+    <title>Windows event log file was cleared</title>
+    <description>Event log cleared on monitored channel</description>
+    <group>audit_cleared,integrity</group>
+  </rule>
+
+</group>
