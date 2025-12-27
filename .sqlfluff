@@ -1,0 +1,75 @@
+[sqlfluff]
+# Диалект PostgreSQL
+dialect = postgres
+
+# Шаблонизатор
+templater = raw
+
+# Максимальная длина строки
+max_line_length = 120
+
+# Единица отступа
+indent_unit = space
+
+# Правила форматирования
+[sqlfluff:rules]
+# Базовые правила
+L001.enabled = True  # Ненужные пробелы в конце строки
+L002.enabled = True  # Смешанные отступы (табы и пробелы)
+L003.enabled = True  # Неправильные отступы
+L004.enabled = True  # Неправильные отступы в операторах
+L005.enabled = True  # Запятые в начале строки
+L006.enabled = True  # Операторы в начале строки
+L007.enabled = True  # Операторы не на новой строке
+L008.enabled = True  # Запятые не на новой строке
+L009.enabled = True  # Файлы должны заканчиваться переводом строки
+L010.enabled = True  # Ключевые слова должны быть в верхнем регистре
+
+# Правила именования
+L014.enabled = True  # Неквалифицированные ссылки на столбцы
+L027.enabled = True  # Неквалифицированные ссылки в SELECT
+L028.enabled = True  # Ссылки на несуществующие столбцы
+
+# Правила безопасности
+L044.enabled = True  # Проверка на потенциальные SQL injection
+L045.enabled = True  # Проверка на использование SELECT *
+L046.enabled = True  # Проверка на использование UNION без ALL
+
+# Правила стиля
+L016.enabled = True  # Длинные строки
+L019.enabled = True  # Запятые в конце списка
+L031.enabled = True  # Избегать использования NOT IN
+L034.enabled = True  # Использование DISTINCT вместо GROUP BY
+L036.enabled = True  # Порядок столбцов в SELECT
+L040.enabled = True  # Пустые строки в конце файла
+
+# Конфигурация правил
+[sqlfluff:rules:L010]
+# Ключевые слова в верхнем регистре
+capitalisation_policy = upper
+
+[sqlfluff:rules:L014]
+# Расширенная политика капитализации
+extended_capitalisation_policy = upper
+
+[sqlfluff:rules:L016]
+# Максимальная длина строки
+max_line_length = 120
+
+[sqlfluff:rules:L030]
+# Использование алиасов для функций
+capitalisation_policy = upper
+
+# Исключения
+[sqlfluff:rules:L003]
+# Отступы для операторов
+hanging_indents = True
+
+[sqlfluff:rules:L045]
+# Разрешить SELECT * в некоторых случаях
+wildcard_policy = single
+
+# Игнорируемые правила для специфичных случаев
+[sqlfluff:rules:L031]
+# Разрешить NOT IN в некоторых случаях (можно отключить)
+enabled = False
